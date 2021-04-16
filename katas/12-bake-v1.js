@@ -76,3 +76,6 @@ recipes = [
 ];
 
 console.log(chooseRecipe(bakeryA, bakeryB, recipes));
+
+//BIG LEARNING MOMENT
+// nest loops are a pain to deal with
