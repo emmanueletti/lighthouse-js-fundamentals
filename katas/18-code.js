@@ -13,11 +13,12 @@ And that's the output of the algorithm. We can then reverse the process to decry
 - calculate the square root of the new string length and round up = "row length"
 - use that number to create a box with a new line break every "row length"
 - read the box column by column
+REDUCTION
   - to read one column, when your rounded sqrt is 8
   - each "columun" will be 9 characters away from each other (including the added "\n")
-  - to read one column, you start from index 0 and jump 9 characters to the next
-  - to read the next column, you have to shift from starting at index 0 to starting at the next index, then jump 9 spaces through the string
-- to solve original problem, repeat this by you rounded sqrt number
+  - to read one column, you start from index 0 and jump 9 characters to the next, then add that character to your final string - repeat this to the end of the string
+  - to read the next column, you have to read the string all over again but now shift from starting at index 0 to starting at the next index, then keep jumping 9 spaces through the string like before
+- to solve original problem, repeat this by the rounded sqrt number (so in the case of a sqrt rounded number of 8, repeat this cycle 8 times - adding a space each cycle)
 
 */
 
@@ -34,7 +35,7 @@ const squareCode = function (message) {
     }
   }
 
-  // calculate rounded sqrt
+  // calculate rounded sqrt with given formula
   let rowLength = Math.ceil(Math.sqrt(processed.length));
 
   // create box string using rounded sqrt
@@ -60,7 +61,6 @@ const squareCode = function (message) {
         scrambled;
       } else if (i === 0) { 
         scrambled += boxString[i];
-
       } else {
         scrambled += boxString[i];
       }
