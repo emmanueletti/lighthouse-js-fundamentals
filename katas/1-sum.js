@@ -15,14 +15,13 @@ STEPS
 function sumLargestNumbers(array) {
 
   let counter1 = array[0];
-  let counter2 = array[0];
-
   for (const element of array) {
     if (element > counter1) {
       counter1 = element;
     }
   }
   
+  let counter2 = array[0];
   for (const element of array) {
     if (element < counter1 && element > counter2) {
       counter2 = element;
